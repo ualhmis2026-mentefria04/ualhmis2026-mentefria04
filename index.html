@@ -1,0 +1,38 @@
+---
+layout: default
+title: Inicio - Blog del Equipo Mentefria04
+---
+
+<h1>Blog del Equipo Mentefria04</h1>
+
+<h2>Descripción del Equipo</h2>
+<p>Somos el equipo <strong>Mentefria04</strong>, formado por <strong>Marcos Escanez Clemente</strong> y <strong>Martín de Vicente Márquez</strong>.</p>
+<p>En este proyecto, estamos desarrollando de forma colaborativa un blog estático utilizando <strong>Jekyll</strong> y automatizando su despliegue tanto en <strong>GitHub Pages</strong> como en la nube de <strong>Azure</strong>. Nuestro objetivo es dominar el flujo de trabajo con <em>Git</em> y <em>GitHub Flow</em>, además de aprender a gestionar repositorios en equipo.</p>
+
+<h2>Estructura del Equipo</h2>
+<p>Conoce más sobre los desarrolladores de este proyecto, nuestras aficiones y enlaces a nuestros perfiles de GitHub en nuestras páginas individuales:</p>
+<ul>
+  <li>👨‍💻 <a href="marcos.html">Página personal de Marcos Escanez</a></li>
+  <li>👨‍💻 <a href="martin.html">Página personal de Martín de Vicente</a></li>
+</ul>
+
+<h2>Contacto</h2>
+<p>¿Tienes alguna duda sobre nuestro proyecto, código o despliegue?</p>
+<ul>
+  <li>✉️ <a href="contacto.html">Ir al formulario de Contacto</a></li>
+</ul>
+
+<hr>
+
+<h2>Últimas entradas del blog</h2>
+<p>Aquí publicaremos nuestro aprendizaje, mini tutoriales y avances del proyecto:</p>
+
+<ul>
+{% for post in site.posts %}
+  <li>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p><strong>Fecha:</strong> {{ post.date | date: "%d/%m/%Y" }}</p>
+    <p><em>{{ post.excerpt | strip_html | truncatewords: 30 }}</em></p>
+  </li>
+{% endfor %}
+</ul>
